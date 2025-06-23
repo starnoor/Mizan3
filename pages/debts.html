@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debt Tracker</title>
+    <link rel="stylesheet" href="./../css/base.css">
+    <link rel="stylesheet" href="./../css/themes.css">
+    <link rel="stylesheet" href="./../css/layout.css">
+    <link rel="stylesheet" href="./../css/components.css">
+    <link rel="stylesheet" href="./../css/utilities.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">💰</div>
+            <nav>
+                <ul>
+                    <li><a href="./../onboarding.html"><i data-feather="home"></i> <span>Onboarding</span></a></li>
+                    <li><a href="./../index.html"><i data-feather="bar-chart-2"></i> <span>Dashboard</span></a></li>
+                    <li><a href="./transactions.html"><i data-feather="repeat"></i> <span>Transactions</span></a></li>
+                    <li><a href="./projects.html"><i data-feather="folder"></i> <span>Projects</span></a></li>
+                    <li><a href="./goals.html"><i data-feather="target"></i> <span>Goals</span></a></li>
+                    <li><a href="./budgets.html"><i data-feather="credit-card"></i> <span>Budgets</span></a></li>
+                    <li><a href="./calendar.html"><i data-feather="calendar"></i> <span>Calendar</span></a></li>
+                    <li><a href="./currency.html"><i data-feather="dollar-sign"></i> <span>Currency & Crypto</span></a></li>
+                    <li><a href="./helpers.html"><i data-feather="tool"></i> <span>Financial Helpers</span></a></li>
+                    <li class="active"><a href="./debts.html"><i data-feather="book-open"></i> <span>Debt Tracker</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Debt Tracker</h1>
+                <div class="user-info">
+                    <span id="userName"></span>
+                    <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                </div>
+            </header>
+
+            <section class="add-debt-section card glassmorphism">
+                <h2>Record New Debt</h2>
+                <form id="debtForm">
+                    <div class="form-group">
+                        <label for="debtAmount">Debt Amount (SAR):</label>
+                        <input type="number" id="debtAmount" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="debtorName">Debtor Name:</label>
+                        <input type="text" id="debtorName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="creditorName">Creditor Name:</label>
+                        <input type="text" id="creditorName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="dueDate">Expected Due Date:</label>
+                        <input type="date" id="dueDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="debtCategory">Category:</label>
+                        <select id="debtCategory">
+                            <option value="personal">Personal</option>
+                            <option value="family">Family</option>
+                            <option value="business">Business</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn">Add Debt</button>
+                </form>
+            </section>
+
+            <section class="debt-list-section card glassmorphism">
+                <h2>Current Debts</h2>
+                <div id="debtList">
+                    <!-- Debts will be loaded here -->
+                </div>
+                <div class="debt-summary">
+                    <h3>Debt Summary</h3>
+                    <p>Total Owed to You: <span id="totalOwedToYou">0 SAR</span></p>
+                    <p>Total You Owe: <span id="totalYouOwe">0 SAR</span></p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+
+    <script src="./../js/debts.js"></script>
+    <script src="./../js/theme-language.js"></script>
+</body>
+</html>

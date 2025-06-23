@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Goals</title>
+    <link rel="stylesheet" href="./../css/base.css">
+    <link rel="stylesheet" href="./../css/themes.css">
+    <link rel="stylesheet" href="./../css/layout.css">
+    <link rel="stylesheet" href="./../css/components.css">
+    <link rel="stylesheet" href="./../css/utilities.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">💰</div>
+            <nav>
+                <ul>
+                    <li><a href="./../onboarding.html"><i data-feather="home"></i> <span>Onboarding</span></a></li>
+                    <li><a href="./../index.html"><i data-feather="bar-chart-2"></i> <span>Dashboard</span></a></li>
+                    <li><a href="./transactions.html"><i data-feather="repeat"></i> <span>Transactions</span></a></li>
+                    <li><a href="./projects.html"><i data-feather="folder"></i> <span>Projects</span></a></li>
+                    <li class="active"><a href="./goals.html"><i data-feather="target"></i> <span>Goals</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Financial Goals</h1>
+                <div class="user-info">
+                    <span id="userName"></span>
+                    <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                </div>
+            </header>
+
+            <section class="goal-form-section card glassmorphism">
+                <h2>Set a New Financial Goal</h2>
+                <form id="goalForm">
+                    <div class="form-group">
+                        <label for="goalName">Goal Name:</label>
+                        <input type="text" id="goalName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="goalAmount">Target Amount:</label>
+                        <input type="number" id="goalAmount" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="savedAmount">Currently Saved:</label>
+                        <input type="number" id="savedAmount" step="0.01" value="0">
+                    </div>
+                    <div class="form-group">
+                        <label for="goalDate">Target Date:</label>
+                        <input type="date" id="goalDate">
+                    </div>
+                    <button type="submit" class="btn">Add Goal</button>
+                </form>
+            </section>
+
+            <section class="goals-list-section">
+                <h2>Your Financial Goals</h2>
+                <div id="goalsList" class="goals-grid"></div>
+            </section>
+        </main>
+    </div>
+
+
+    <script src="./../js/goals.js"></script>
+    <script src="./../js/theme-language.js"></script>
+</body>
+</html>

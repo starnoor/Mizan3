@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المساعد الذكي - MEEMX</title>
+    <link rel="stylesheet" href="./../css/base.css">
+    <link rel="stylesheet" href="./../css/themes.css">
+    <link rel="stylesheet" href="./../css/layout.css">
+    <link rel="stylesheet" href="./../css/components.css">
+    <link rel="stylesheet" href="./../css/utilities.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="./../logo.png" alt="MEEMX Logo">
+                <h1>MEEMX</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./../index.html"><i data-feather="home"></i> لوحة التحكم</a></li>
+                    <li><a href="./transactions.html"><i data-feather="repeat"></i> المعاملات</a></li>
+                    <li><a href="./budgets.html"><i data-feather="dollar-sign"></i> الميزانيات</a></li>
+                    <li><a href="./goals.html"><i data-feather="target"></i> الأهداف</a></li>
+                    <li><a href="./projects.html"><i data-feather="briefcase"></i> المشاريع</a></li>
+                    <li><a href="./calendar.html"><i data-feather="calendar"></i> التقويم المالي</a></li>
+                    <li><a href="./currency.html"><i data-feather="dollar-sign"></i> محول العملات</a></li>
+                    <li><a href="./helpers.html"><i data-feather="tool"></i> أدوات مساعدة</a></li>
+                    <li><a href="./debts.html"><i data-feather="credit-card"></i> دفتر الديون</a></li>
+                    <li><a href="./settings.html"><i data-feather="settings"></i> الإعدادات</a></li>
+                    <li class="active"><a href="./assistant.html"><i data-feather="message-square"></i> المساعد الذكي</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h2>المساعد الذكي</h2>
+                <div class="user-profile">
+                    <span class="user-name">مرحباً، المستخدم!</span>
+                    <img src="./../user-avatar.png" alt="User Avatar" class="avatar">
+                </div>
+            </header>
+
+            <section class="chat-section glassmorphism">
+                <div class="chat-messages" id="chat-messages">
+                    <div class="message assistant-message">
+                        <p>مرحباً! أنا مساعدك المالي الذكي. كيف يمكنني مساعدتك اليوم؟</p>
+                        <span class="message-time">الآن</span>
+                    </div>
+                    <div class="message warning-message">
+                        <p><i data-feather="alert-triangle"></i> هذه الميزة تتطلب اتصالاً بالإنترنت. لن يتم إرسال أي بيانات شخصية أخرى إلى OpenAI.</p>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" id="user-input" placeholder="اكتب سؤالك هنا...">
+                    <button id="send-button"><i data-feather="send"></i></button>
+                </div>
+            </section>
+
+            <footer class="footer glassmorphism">
+                <div class="developer-info">
+                    <img src="./../developer-avatar.png" alt="Developer Avatar" class="developer-avatar">
+                    <p>Powered by MEEMX ©</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+
+    <script src="./../js/ai-assistant.js"></script>
+    <script src="./../js/theme-language.js"></script>
+</body>
+</html>

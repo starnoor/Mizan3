@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Calendar</title>
+    <link rel="stylesheet" href="./../css/base.css">
+    <link rel="stylesheet" href="./../css/themes.css">
+    <link rel="stylesheet" href="./../css/layout.css">
+    <link rel="stylesheet" href="./../css/components.css">
+    <link rel="stylesheet" href="./../css/utilities.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">💰</div>
+            <nav>
+                <ul>
+                    <li><a href="./../onboarding.html"><i data-feather="home"></i> <span>Onboarding</span></a></li>
+                    <li><a href="./../index.html"><i data-feather="bar-chart-2"></i> <span>Dashboard</span></a></li>
+                    <li><a href="./transactions.html"><i data-feather="repeat"></i> <span>Transactions</span></a></li>
+                    <li><a href="./projects.html"><i data-feather="folder"></i> <span>Projects</span></a></li>
+                    <li><a href="./goals.html"><i data-feather="target"></i> <span>Goals</span></a></li>
+                    <li><a href="./budgets.html"><i data-feather="credit-card"></i> <span>Budgets</span></a></li>
+                    <li class="active"><a href="./calendar.html"><i data-feather="calendar"></i> <span>Calendar</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h1>Financial Calendar</h1>
+                <div class="user-info">
+                    <span id="userName"></span>
+                    <img src="https://via.placeholder.com/40" alt="User Avatar" class="avatar">
+                </div>
+            </header>
+
+            <section class="calendar-section card glassmorphism">
+                <div class="calendar-header">
+                    <button id="prevMonth" class="btn-nav"><i data-feather="chevron-left"></i></button>
+                    <h2 id="currentMonthYear"></h2>
+                    <button id="nextMonth" class="btn-nav"><i data-feather="chevron-right"></i></button>
+                </div>
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- Calendar days will be rendered here by JavaScript -->
+                </div>
+            </section>
+
+            <section class="daily-transactions-section card glassmorphism">
+                <h2>Transactions for <span id="selectedDate"></span></h2>
+                <div id="dailyTransactionsList"></div>
+            </section>
+        </main>
+    </div>
+
+
+    <script src="./../js/calendar.js"></script>
+    <script src="./../js/theme-language.js"></script>
+</body>
+</html>

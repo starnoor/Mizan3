@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الإعدادات العامة والتصدير - MEEMX</title>
+    <link rel="stylesheet" href="./../css/base.css">
+    <link rel="stylesheet" href="./../css/themes.css">
+    <link rel="stylesheet" href="./../css/layout.css">
+    <link rel="stylesheet" href="./../css/components.css">
+    <link rel="stylesheet" href="./../css/utilities.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <div class="logo">
+                <img src="./../logo.png" alt="MEEMX Logo">
+                <h1>MEEMX</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="./../index.html"><i data-feather="home"></i> لوحة التحكم</a></li>
+                    <li><a href="./transactions.html"><i data-feather="repeat"></i> المعاملات</a></li>
+                    <li><a href="./budgets.html"><i data-feather="dollar-sign"></i> الميزانيات</a></li>
+                    <li><a href="./goals.html"><i data-feather="target"></i> الأهداف</a></li>
+                    <li><a href="./projects.html"><i data-feather="briefcase"></i> المشاريع</a></li>
+                    <li><a href="./calendar.html"><i data-feather="calendar"></i> التقويم المالي</a></li>
+                    <li><a href="./currency.html"><i data-feather="dollar-sign"></i> محول العملات</a></li>
+                    <li><a href="./helpers.html"><i data-feather="tool"></i> أدوات مساعدة</a></li>
+                    <li><a href="./debts.html"><i data-feather="credit-card"></i> دفتر الديون</a></li>
+                    <li class="active"><a href="./settings.html"><i data-feather="settings"></i> الإعدادات</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <header class="header">
+                <h2>الإعدادات العامة والتصدير</h2>
+                <div class="user-profile">
+                    <span class="user-name">مرحباً، المستخدم!</span>
+                    <img src="./../user-avatar.png" alt="User Avatar" class="avatar">
+                </div>
+            </header>
+
+            <section class="settings-section glassmorphism">
+                <h3>الإعدادات العامة</h3>
+                <div class="setting-item">
+                    <label for="app-name">اسم التطبيق:</label>
+                    <input type="text" id="app-name" value="MEEMX">
+                </div>
+                <div class="setting-item">
+                    <label for="language">اللغة:</label>
+                    <select id="language">
+                        <option value="ar">العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="currency">العملة الافتراضية:</label>
+                    <select id="currency">
+                        <option value="SAR">ريال سعودي (SAR)</option>
+                        <option value="USD">دولار أمريكي (USD)</option>
+                        <option value="EUR">يورو (EUR)</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label for="theme">الثيم:</label>
+                    <select id="theme">
+                        <option value="light">فاتح</option>
+                        <option value="dark">داكن</option>
+                        <option value="winter">شتوي</option>
+                        <option value="summer">صيفي</option>
+                        <option value="night">ليلي</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="settings-section glassmorphism">
+                <h3>تخصيص الفئات والوسوم</h3>
+                <div class="setting-item">
+                    <label for="category-color">لون الفئة:</label>
+                    <input type="color" id="category-color" value="#6200EE">
+                </div>
+                <div class="setting-item">
+                    <label for="tag-icon">أيقونة الوسم:</label>
+                    <input type="text" id="tag-icon" placeholder="مثال: feather-icon-name">
+                    <button id="add-tag-icon">إضافة</button>
+                </div>
+                <div id="custom-categories-tags" class="custom-list">
+                    <!-- Custom categories and tags will be listed here -->
+                </div>
+            </section>
+
+            <section class="settings-section glassmorphism">
+                <h3>تصدير واستيراد البيانات</h3>
+                <button id="export-data" class="action-button"><i data-feather="download"></i> تصدير البيانات (JSON)</button>
+                <input type="file" id="import-file" accept=".json" style="display: none;">
+                <button id="import-data" class="action-button"><i data-feather="upload"></i> استيراد البيانات (JSON)</button>
+            </section>
+
+            <section class="settings-section glassmorphism">
+                <h3>إعادة ضبط التطبيق</h3>
+                <button id="reset-app" class="action-button reset-button"><i data-feather="alert-triangle"></i> إعادة ضبط كامل للتطبيق</button>
+                <p class="warning-text">سيؤدي هذا إلى حذف جميع بياناتك وإعادة التطبيق إلى حالته الأصلية.</p>
+            </section>
+
+            <footer class="footer glassmorphism">
+                <div class="developer-info">
+                    <img src="./../developer-avatar.png" alt="Developer Avatar" class="developer-avatar">
+                    <p>Powered by MEEMX ©</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+
+    <script src="./../js/settings.js"></script>
+    <script src="./../js/theme-language.js"></script>
+</body>
+</html>

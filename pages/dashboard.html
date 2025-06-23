@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم - ميزان</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script> <!-- Add your FontAwesome kit -->
+</head>
+<body>
+
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <h1 class="logo">ميزان</h1>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="dashboard.html" class="active"><i class="fas fa-tachometer-alt icon"></i> لوحة التحكم</a></li>
+                    <li><a href="transactions.html"><i class="fas fa-exchange-alt icon"></i> المعاملات</a></li>
+                    <li><a href="reports.html"><i class="fas fa-chart-pie icon"></i> التقارير</a></li>
+                    <li><a href="budget.html"><i class="fas fa-piggy-bank icon"></i> الميزانية</a></li>
+                    <li><a href="settings.html"><i class="fas fa-cog icon"></i> الإعدادات</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="dashboard-header">
+                <h2 class="header-title">مرحباً بك، <span id="user-name"></span>!</h2>
+                <div class="header-actions">
+                    <button class="btn btn-primary">إضافة معاملة</button>
+                </div>
+            </header>
+
+            <section class="summary-cards">
+                <div class="card">
+                    <h3>إجمالي الدخل</h3>
+                    <p class="amount income">0.00</p>
+                </div>
+                <div class="card">
+                    <h3>إجمالي المصروفات</h3>
+                    <p class="amount expense">0.00</p>
+                </div>
+                <div class="card">
+                    <h3>الرصيد الحالي</h3>
+                    <p class="amount balance">0.00</p>
+                </div>
+            </section>
+
+            <section class="recent-transactions">
+                <h3>أحدث المعاملات</h3>
+                <div class="transactions-list">
+                    <!-- Transactions will be loaded here -->
+                    <p>لا توجد معاملات لعرضها.</p>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

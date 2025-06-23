@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Mizan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Noto+Kufi+Arabic:wght@400;700&family=Poppins:wght@400;700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/themes.css">
+    <link rel="stylesheet" href="./css/layout.css">
+    <link rel="stylesheet" href="./css/components.css">
+    <link rel="stylesheet" href="./css/utilities.css">
+    <link rel="manifest" href="./manifest.json">
+    <style>
+        body {
+            font-family: 'Poppins', 'Inter', sans-serif;
+            background-color: #f0f4ff; /* سماوي ثلجي ناعم */
+            color: #2d3436; /* رمادي داكن */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .onboarding-container {
+            background-color: #ffffff;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        h1 {
+            color: #4dabf7; /* أزرق سماوي فاتح */
+            margin-bottom: 30px;
+            font-size: 2.5em;
+        }
+        .progress-bar-container {
+            width: 100%;
+            background-color: #e0e0e0;
+            border-radius: 10px;
+            height: 10px;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #4dabf7; /* أزرق سماوي فاتح */
+            border-radius: 10px;
+            transition: width 0.4s ease-in-out;
+        }
+        .step-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .step-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #2d3436;
+        }
+        input[type="text"],
+        select {
+            width: calc(100% - 20px);
+            padding: 12px 10px;
+            border: 1px solid #a29bfe; /* بنفسجي فاتح */
+            border-radius: 10px;
+            font-size: 1em;
+            color: #2d3436;
+            background-color: #f8faff;
+            transition: all 0.3s ease;
+        }
+        input[type="text"]:focus,
+        select:focus {
+            border-color: #4dabf7;
+            box-shadow: 0 0 0 3px rgba(77, 171, 247, 0.3);
+            outline: none;
+        }
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+        .btn {
+            background-color: #00cec9; /* لون تفاعلي */
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            flex-grow: 1;
+            margin: 0 5px;
+        }
+        .btn:hover {
+            background-color: #00bcd4;
+            transform: translateY(-2px);
+        }
+        .btn:disabled {
+            background-color: #cccccc;
+            cursor: not-allowed;
+        }
+        .btn.prev {
+            background-color: #a29bfe;
+        }
+        .btn.prev:hover {
+            background-color: #8e82f0;
+        }
+        .country-select-wrapper {
+            position: relative;
+        }
+        .country-select-wrapper select {
+            padding-left: 40px; /* Space for flag */
+        }
+        .country-select-wrapper .flag-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-size: cover;
+            background-position: center;
+        }
+        /* RTL adjustments */
+        html[dir="rtl"] body {
+            font-family: 'Cairo', 'Noto Kufi Arabic', sans-serif;
+        }
+        html[dir="rtl"] .form-group {
+            text-align: right;
+        }
+        html[dir="rtl"] .country-select-wrapper select {
+            padding-left: 10px;
+            padding-right: 40px; /* Space for flag */
+        }
+        html[dir="rtl"] .country-select-wrapper .flag-icon {
+            left: auto;
+            right: 10px;
+        }
+        @media (max-width: 600px) {
+            .onboarding-container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2em;
+            }
+            .btn-group {
+                flex-direction: column;
+            }
+            .btn {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="onboarding-container">
+        <h1>Welcome to Mizan!</h1>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar"></div>
+        </div>
+        <form id="onboarding-form">
+            <!-- Step 1: Full Name -->
+            <div class="step-content active" data-step="1">
+                <div class="form-group">
+                    <label for="firstName">First Name:</label>
+                    <input type="text" id="firstName" placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name:</label>
+                    <input type="text" id="lastName" placeholder="Enter your last name" required>
+                </div>
+            </div>
+
+            <!-- Step 2: Country Selection -->
+            <div class="step-content" data-step="2">
+                <div class="form-group">
+                    <label for="country">Country:</label>
+                    <div class="country-select-wrapper">
+                        <span id="selected-flag" class="flag-icon"></span>
+                        <select id="country" required>
+                            <!-- Options will be populated by JavaScript -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 3: Currency Selection -->
+            <div class="step-content" data-step="3">
+                <div class="form-group">
+                    <label for="currency">Base Currency:</label>
+                    <select id="currency" required>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+            </div>
+
+            <!-- Step 4: Language -->
+            <div class="step-content" data-step="4">
+                <div class="form-group">
+                    <label for="language">Language:</label>
+                    <select id="language">
+                        <option value="ar">العربية</option>
+                        <option value="en">English</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Step 5: Theme -->
+            <div class="step-content" data-step="5">
+                <div class="form-group">
+                    <label for="theme">Theme:</label>
+                    <select id="theme">
+                        <option value="light">Light</option>
+                        <option value="dark">Dark</option>
+                        <option value="auto">Auto</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="btn-group">
+                <button type="button" class="btn prev" id="prev-btn" style="display: none;">Previous</button>
+                <button type="button" class="btn next" id="next-btn">Next</button>
+                <button type="submit" class="btn submit" id="submit-btn" style="display: none;">Start Now</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="./js/script.js"></script>
+    <script src="./js/theme-language.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js').then(registration => {
+                    console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                }, err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+</body>
+</html>

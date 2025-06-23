@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Projects</title>
+    <link rel="stylesheet" href="./../css/base.css">
+    <link rel="stylesheet" href="./../css/themes.css">
+    <link rel="stylesheet" href="./../css/layout.css">
+    <link rel="stylesheet" href="./../css/components.css">
+    <link rel="stylesheet" href="./../css/utilities.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+<body>
+    <div class="projects-container">
+        <header class="projects-header">
+            <h1>Financial Projects</h1>
+            <nav>
+                <a href="./../onboarding.html">Onboarding</a>
+                <a href="./../index.html">Dashboard</a>
+                <a href="./transactions.html">Transactions</a>
+            </nav>
+        </header>
+
+        <main class="projects-main">
+            <section class="add-project-section">
+                <h2>Create New Project</h2>
+                <form id="project-form">
+                    <div class="form-group">
+                        <label for="project-name">Project Name:</label>
+                        <input type="text" id="project-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-budget">Budget:</label>
+                        <input type="number" id="project-budget" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-color">Card Color:</label>
+                        <input type="color" id="project-color" value="#66bb6a">
+                    </div>
+                    <button type="submit">Add Project</button>
+                </form>
+            </section>
+
+            <section class="project-list-section">
+                <h2>Your Projects</h2>
+                <div id="projects-grid">
+                    <!-- Project cards will be loaded here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="./../js/projects.js"></script>
+    <script src="./../js/theme-language.js"></script>
+
+</body>
+</html>

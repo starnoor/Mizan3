@@ -1,0 +1,323 @@
+body {
+    font-family: 'Cairo', 'Noto Kufi Arabic', sans-serif;
+    margin: 0;
+    background-color: var(--background-light);
+    color: var(--text-color-dark);
+    overflow-x: hidden;
+    position: relative;
+    direction: rtl;
+}
+
+body.dark {
+    background-color: var(--background-dark);
+    color: var(--text-color-light);
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: var(--surface-dark);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid var(--border-color-dark);
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+    color: var(--text-color-light);
+}
+
+body.dark .sidebar {
+    background-color: #1c1c1e; /* Explicit dark color */
+    border-left: 1px solid var(--border-color-dark);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.main-nav li a {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: var(--border-radius-md);
+    color: var(--text-color-light-medium);
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.main-nav li a:hover,
+.main-nav li a.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.main-nav li a .icon {
+    margin-left: 15px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header-title {
+    font-size: 2.5em;
+    color: var(--text-color-dark);
+}
+
+body.dark .header-title {
+    color: var(--text-color-light);
+}
+
+.summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background-color: var(--surface-light);
+    padding: 25px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+body.dark .card {
+    background-color: var(--surface-dark);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.card h3 {
+    margin-top: 0;
+    font-size: 1.1em;
+    color: var(--text-color-medium);
+}
+
+.card .amount {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.card .income {
+    color: var(--success-color);
+}
+
+.card .expense {
+    color: var(--error-color);
+}
+
+.recent-transactions h3 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    border-radius: var(--border-radius-md);
+    margin-bottom: 10px;
+    background-color: var(--background-light);
+    transition: background-color 0.3s;
+}
+
+body.dark .transaction-item {
+    background-color: var(--background-dark);
+}
+
+.transaction-item:hover {
+    background-color: var(--surface-light-hover);
+}
+
+body.dark .transaction-item:hover {
+    background-color: var(--surface-dark-hover);
+}
+
+.transaction-item .description {
+    font-weight: 600;
+}
+
+.transaction-item .amount {
+    font-weight: 700;
+}
+    margin-bottom: 20px;
+}
+
+.summary-cards {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 250px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .material-icons {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.card.income .material-icons { color: #28a745; }
+.card.expense .material-icons { color: #dc3545; }
+.card.balance .material-icons { color: #007bff; }
+
+.card h3 {
+    margin: 0 0 10px 0;
+    color: #555;
+}
+
+.card p {
+    font-size: 1.8em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.dashboard-main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.charts-section,
+.suggestions-section {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    min-width: 45%;
+}
+
+.charts-section h2,
+.suggestions-section h2 {
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.chart-controls {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.chart-controls button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.chart-controls button:hover {
+    background-color: #0056b3;
+}
+
+#financial-chart {
+    max-height: 400px;
+}
+
+.suggestions-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.suggestions-section li {
+    background-color: #e9f7ef;
+    border-left: 5px solid #28a745;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: #333;
+}
+
+/* RTL support */
+body.rtl {
+    direction: rtl;
+    font-family: 'Cairo', sans-serif;
+}
+
+body.rtl .card {
+    text-align: right;
+    align-items: flex-end;
+}
+
+body.rtl .suggestions-section li {
+    border-left: none;
+    border-right: 5px solid #28a745;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .summary-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .dashboard-main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .charts-section,
+    .suggestions-section {
+        min-width: 90%;
+    }
+}
